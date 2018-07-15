@@ -7,9 +7,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
 
-import HomeIcon from './HomeIcon';
+// import HomeIcon from './HomeIcon';
 
 const styles = {
   root: {
@@ -24,20 +24,20 @@ const styles = {
   },
 };
 
-function NavBar(props) {
-  const { classes } = props;
+const NavBar = (props) => {
+  const { classes, toggleDrawer } = props;
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <HomeIcon href="" />
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={toggleDrawer(true)}>
+            <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
             Patreon For Charity
           </Typography>
-          <Button color="inherit" href="#signin">Sign In</Button>
+          <Button color="inherit" href="#">Sign In</Button>
         </Toolbar>
       </AppBar>
     </div >
