@@ -1,10 +1,9 @@
 import React from 'react';
 import Grid from '../../components/Grid';
-import data from '../../fake-data.json';
 
-const Home = () => (
+const Home = ({ ctx }) => (
   <div>
-    <Grid orgs={data.orgs} />
+    <Grid orgs={ctx.orgs} />
   </div>
 );
 
