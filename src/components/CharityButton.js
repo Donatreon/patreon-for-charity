@@ -1,32 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import DonateButton from './DonateButton';
+import React from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import CardBody from "components/Card/CardBody.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
-const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-  },
-});
+import imagesStyles from "../assets/jss/material-kit-react/imagesStyles.jsx";
 
-const CharityButton = ({ name, image, classes }) =>
-  (
-    <div className={classes.root}>
-      <div>
-        {name}
-      </div>
-      <img src={image} alt={name} className="logos" />
-      <DonateButton />
-    </div>
-  )
+import { cardTitle } from "../assets/jss/material-kit-react.jsx";
 
-CharityButton.propTypes = {
-  classes: PropTypes.object.isRequired,
+const style = {
+  ...imagesStyles,
+  cardTitle,
 };
 
-export default withStyles(styles)(CharityButton);
+class CharityButton extends React.Component {
+  render() {
+    const { name, image, classes } = this.props;
+    return (
+      <CardBody>
+        <h4 className={classes.cardTitle}>{name}</h4>
+        <img
+          style={{ height: "180px", width: "100%", display: "block" }}
+          className={classes.imgCardTop}
+          src={image}
+          alt={name}
+        />
+        <Button color="primary">Donate now</Button>
+      </CardBody>
+    );
+  }
+}
+
+export default withStyles(style)(CharityButton);
