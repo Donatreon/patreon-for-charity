@@ -21,11 +21,11 @@ class CreateOrg extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = name => event => {
     this.setState({
-      [event.target.name]: event.target.value
+      [name]: event.target.value
     });
-  }
+  };
 
   handleSubmit(event) {
     event.preventDefault();
@@ -39,44 +39,42 @@ class CreateOrg extends React.Component {
           onSubmit={this.handleSubmit}
           noValidate
           autoComplete="off"
-          className="form"
+          className="container"
         >
-          <div className="input">
-            <div className="inputline">
-              <label htmlFor="orgName">Organization Name: </label>
-              <TextField
-                type="text"
-                name="orgName"
-                value={this.state.orgName}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="inputline">
-              <label htmlFor="description">Description: </label>
-              <TextField
-                name="description"
-                value={this.state.description}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="inputline">
-              <label htmlFor="url">URL: </label>
-              <TextField
-                type="text"
-                name="url"
-                value={this.state.url}
-                onChange={this.handleChange}
-              />
-            </div>
+          <TextField
+            id="required"
+            label="Organization Name"
+            className="textfield"
+            value={this.state.orgName}
+            onChange={this.handleChange("name")}
+            margin="normal"
+          />
+          <TextField
+            id="required"
+            label="Description"
+            className="textfield"
+            value={this.state.description}
+            onChange={this.handleChange("description")}
+            margin="normal"
+          />
+          <TextField
+            id="name"
+            label="URL"
+            className="textfield"
+            value={this.state.url}
+            onChange={this.handleChange("url")}
+            margin="normal"
+          />
+          <div className="button">
+            <Button
+              size="medium"
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
+              Submit
+            </Button>
           </div>
-          <Button
-            size="medium"
-            variant="contained"
-            color="primary"
-            type="submit"
-          >
-            Submit
-          </Button>
         </form>
       </div>
     );

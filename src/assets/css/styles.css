@@ -7,17 +7,16 @@ body {
   background-color: #f9f0b8;
 }
 
-.form {
-  margin-left: 2rem;
-}
-
-.input {
+.container {
   display: flex;
   flex-direction: column;
-  height: 10rem;
+  align-items: center;
 }
 
-.inputline {
-  display: flex;
-  justify-content: flex-start;
+.textfield {
+  width: 60%;
+}
+
+.button {
+  margin-top: 2rem;
 }
