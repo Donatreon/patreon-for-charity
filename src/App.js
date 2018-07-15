@@ -25,10 +25,10 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
 
-        <Route exact path="/" component={Home}/>
-        <Route path="/create-org" component={CreateOrg}/>
-        <Route path="/org-details" component={OrgDetails}/>
-        <Route path="/signup" component={SignUp}/>
+        <Route exact path="/" component={Home} />
+        <Route path="/create-org" component={CreateOrg} />
+        <Route path="/org-details" component={OrgDetails} />
+        <Route path="/signup" component={SignUp} />
         <Grid />
       </div>
     );
