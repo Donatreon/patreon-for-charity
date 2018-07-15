@@ -35,7 +35,7 @@ const NavBar = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Donato
+            Donate.To
           </Typography>
           {/* <Button color="inherit" href="#">Sign In</Button> */}
         </Toolbar>
