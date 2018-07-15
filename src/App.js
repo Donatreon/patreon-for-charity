@@ -9,17 +9,15 @@ import SideMenu from 'views/SideMenu'
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer/Footer";
-
-import Button from '@material-ui/core/Button';
-
-// import { withStyles } from '@material-ui/core/styles';
-
-
 import 'normalize.css/normalize.css';
 import './App.css';
 
+// import Button from '@material-ui/core/Button';
+// import { withStyles } from '@material-ui/core/styles';
+
 // bootstrap the initial data state
 import demo_data from 'fake-data.json';
+
 
 function createSub({ amount, recurring, interval }) {
   return {
