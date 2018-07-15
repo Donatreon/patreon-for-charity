@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import Grid from './components/Grid';
+import NavBar from './components/NavBar';
 
 // import logo from './logo.svg';
 import 'normalize.css/normalize.css';
 import './App.css';
-import Grid from './components/Grid';
-import NavBar from './components/NavBar';
+import data from './fake-data.json';
 
 class App extends Component {
+  state = {
+    orgs: data.orgs
+  };
   render() {
     return (
       <div className="App">
