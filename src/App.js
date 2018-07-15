@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
 import Home from 'views/Home';
 import CreateOrg from 'views/CreateOrg';
 import Profile from 'views/Profile';
 import SignIn from 'views/SignIn';
 
-import NavBar from './components/NavBar';
+import NavBar from "./components/NavBar";
 
 import 'normalize.css/normalize.css';
 import './App.css';
