@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+// import { createMuiTheme } from '@material-ui/core/styles';
 
 import Home from 'views/Home';
 import CreateOrg from 'views/CreateOrg';
@@ -10,13 +11,13 @@ import SideMenu from 'views/SideMenu'
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer/Footer";
 
-import Button from '@material-ui/core/Button';
-
-// import { withStyles } from '@material-ui/core/styles';
 import 'typeface-roboto'
 
 import 'normalize.css/normalize.css';
 import './App.css';
+
+// import Button from '@material-ui/core/Button';
+// import { withStyles } from '@material-ui/core/styles';
 
 // bootstrap the initial data state
 import demo_data from 'fake-data.json';
@@ -64,8 +65,6 @@ const demo_user = {
 }
 
 
-
-
 const WrappedRoute = ({ component: Component, path, ...rest }) => {
   return (
     <Route
@@ -77,6 +76,16 @@ const WrappedRoute = ({ component: Component, path, ...rest }) => {
     />
   );
 };
+
+
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: '#ED1B2E',
+//     },
+//   }
+// });
+
 
 class App extends Component {
   state = {
@@ -97,6 +106,8 @@ class App extends Component {
     else {
 
       const targetIndex = this.state.user.subs.findIndex((sub) => sub.id === new_data.ID)
+      // update target record recurring and active values
+      
       // this.state.user
       this.setState({
         user: {
@@ -117,8 +128,6 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar toggleDrawer={this.toggleDrawer} />
-
-        {/* <Button onClick={this.toggleDrawer(true)}>Open Left</Button> */}
 
         <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} ctx={this.state} updateState={this.udpate} />
 

@@ -1,19 +1,19 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import CardBody from "components/Card/CardBody.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+// import Button from "components/CustomButtons/Button.jsx";
 
 import imagesStyles from "../assets/jss/material-kit-react/imagesStyles.jsx";
 
 import { cardTitle } from "../assets/jss/material-kit-react.jsx";
-import DonateModal from "./DonateModal";
 
 // custom components
-// import DonateModal from './DonateModal';
+import DonateModal from "./DonateModal";
+
 
 const style = {
   ...imagesStyles,
-  cardTitle,
+  cardTitle: { ...cardTitle, height: '60px' }
 };
 
 class CharityButton extends React.Component {

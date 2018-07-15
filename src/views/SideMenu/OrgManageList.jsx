@@ -93,7 +93,7 @@ class OrgManageItem extends React.Component {
                             recurring 
                             <Checkbox
                                 onChange={this.updateSub}
-                                checked={this.state.recurring && this.state.org.active}
+                                checked={this.state.recurring && this.props.org.active}
                             />
                     </ExpansionPanelDetails>
     
