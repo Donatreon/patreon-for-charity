@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer";
 import Button from '@material-ui/core/Button';
 
 // import { withStyles } from '@material-ui/core/styles';
-
+import 'typeface-roboto'
 
 import 'normalize.css/normalize.css';
 import './App.css';
@@ -41,6 +41,22 @@ const demo_user = {
       interval: 'm', // monthly: m, quarterly: q
       total: 10,
       active: true
+    },
+    {
+      id: '2018TXHCK311',
+      recurring: true,
+      amount: 5, // in whole dollars
+      interval: 'q', // monthly: m, quarterly: q
+      total: 60,
+      active: true
+    },
+    {
+      id: '2018TXHCK313',
+      recurring: true,
+      amount: 5, // in whole dollars
+      interval: 'm', // monthly: m, quarterly: q
+      total: 100,
+      active: false
     }
   ],
   image: 'https://banner2.kisspng.com/20180404/lpe/kisspng-philip-j-fry-bender-leela-sticker-futurama-5ac54bcf3781d5.5554988315228794392274.jpg',
@@ -75,7 +91,6 @@ class App extends Component {
   }
 
   toggleDrawer = (open) => () => {
-    console.log('hi')
     this.setState({
       showMenu: open,
     });
@@ -88,7 +103,7 @@ class App extends Component {
 
         <Button onClick={this.toggleDrawer(true)}>Open Left</Button>
 
-        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} />
+        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} ctx={this.state} />
 
         <WrappedRoute path="/" component={Home} ctx={this.state} update={this.update} />
         <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} />
