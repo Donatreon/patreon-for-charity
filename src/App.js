@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 
-// import logo from './logo.svg';
-import 'normalize.css/normalize.css';
+import {
+  Route,
+  // Link
+} from 'react-router-dom'
+
+import Home from 'views/Home'
+import CreateOrg from 'views/CreateOrg'
+import OrgDetails from 'views/OrgDetails'
+import SignUp from 'views/SignUp'
+
+// import 'normalize.css/normalize.css';
 import './App.css';
+
 import Grid from './components/Grid';
 import NavBar from './components/NavBar';
 
@@ -11,14 +21,15 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Grid />
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
+
+        <Route exact path="/" component={Home}/>
+        <Route path="/create-org" component={CreateOrg}/>
+        <Route path="/org-details" component={OrgDetails}/>
+        <Route path="/signup" component={SignUp}/>
+        <Grid />
       </div>
     );
   }
