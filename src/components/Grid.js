@@ -19,72 +19,26 @@ const styles = theme => ({
 });
 
 function CenteredGrid(props) {
-  const { classes } = props;
-
+  const { classes, orgs } = props;
+  // console.log(classes, orgs)
   return (
     <div className="wrapper">
       <div className={classes.root}>
         <Grid container spacing={24}>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <CharityButton />
-            </Paper>
-          </Grid>
+          {orgs.map((org, index) => (
+            <Grid item xs={3} key={index}>
+              <Paper className={classes.paper}>
+                <CharityButton
+                  name={org.name}
+                  image={org.logo_url}
+                />
+              </Paper>
+            </Grid>
+
+          ))
+
+          }
+
         </Grid>
       </div>
     </div>
