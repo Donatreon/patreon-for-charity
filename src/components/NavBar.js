@@ -29,15 +29,15 @@ const NavBar = (props) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: 'red' }} >
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Patreon For Charity
+            Donato
           </Typography>
-          <Button color="inherit" href="#">Sign In</Button>
+          {/* <Button color="inherit" href="#">Sign In</Button> */}
         </Toolbar>
       </AppBar>
     </div >
