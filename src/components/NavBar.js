@@ -24,14 +24,14 @@ const styles = {
   },
 };
 
-function NavBar(props) {
-  const { classes } = props;
+const NavBar = (props) => {
+  const { classes, toggleDrawer } = props;
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
