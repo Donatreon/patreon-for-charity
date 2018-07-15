@@ -21,7 +21,7 @@ import './App.css';
 // bootstrap the initial data state
 import demo_data from 'fake-data.json';
 
-function createSub ({ amount, recurring, interval }) {
+function createSub({ amount, recurring, interval }) {
   return {
     id: `2018TXHCK305${demo_data.length + 1}`, // temp crappy id maker
     amount,
@@ -33,7 +33,7 @@ function createSub ({ amount, recurring, interval }) {
 const demo_user = {
   name: 'Gus Goodguy',
   subs: [
-  // charities backed by the User
+    // charities backed by the User
     {
       id: '2018TXHCK301',
       recurring: true,
@@ -84,9 +84,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar toggleDrawer={this.toggleDrawer} />
 
-        <Button onClick={this.toggleDrawer(true)}>Open Left</Button>
+        {/* <Button onClick={this.toggleDrawer(true)}>Open Left</Button> */}
 
         <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} />
 
