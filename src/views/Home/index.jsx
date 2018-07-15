@@ -1,13 +1,10 @@
-import React from 'react'
-
+import React from 'react';
+import Grid from '../../components/Grid';
 
 const Home = () => (
-    <div>
-      <h2>Home</h2>
-      <div>
-        Welcome Home.
-      </div>
-    </div>
-  )
+  <div>
+    <Grid />
+  </div>
+);
 
-export default Home
+export default Home;
