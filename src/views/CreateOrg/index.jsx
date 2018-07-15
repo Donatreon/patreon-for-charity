@@ -46,7 +46,7 @@ class CreateOrg extends React.Component {
             label="Organization Name"
             className="textfield"
             value={this.state.orgName}
-            onChange={this.handleChange("name")}
+            onChange={this.handleChange("orgName")}
             margin="normal"
           />
           <TextField
