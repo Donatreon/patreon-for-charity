@@ -39,12 +39,28 @@ const styles = {
 
 class OrgManageItem extends React.Component {
     state = {
-        open: false
+        open: false,
+        recurring: this.props.org.recurring
     }
 
     handleChange = () => {
         this.setState({
             open: !this.state.open
+        })
+    }
+
+    updateSub = () => {
+        const {update} = this.props
+
+        const next_state = ! this.state.recurring
+
+        update('sub', {
+            ID: this.props.org.ID,
+            recurring: next_state
+        })
+
+        this.setState({
+            recurring: next_state
         })
     }
 
@@ -54,7 +70,9 @@ class OrgManageItem extends React.Component {
             q: 'quarterly',
             m: 'monthly'
         }
-        const statusText = `$${org.amount}, ${org.recurring ? `recurring ${freqMap[org.interval]}` : ''}`
+        const statusText = org.active
+            ? `$${org.amount}, ${org.recurring ? `recurring ${freqMap[org.interval]}` : ''}`
+            : `inactive, total given so far: $${org.total}`
 
         return (
             <ListItem dense button className={classes.listItem}>
@@ -66,7 +84,7 @@ class OrgManageItem extends React.Component {
                         <Avatar alt={org.name} src={org.logo_url} />
                         <ListItemText
                             primary={`${org.name}`}
-                            secondary={`${org.active ? statusText : 'inactive'}`}
+                            secondary={`${statusText}`}
                         />
 
                     </ExpansionPanelSummary>
@@ -74,8 +92,8 @@ class OrgManageItem extends React.Component {
                     <ExpansionPanelDetails>
                             recurring 
                             <Checkbox
-                                onChange={()=>{}}
-                                checked={true}
+                                onChange={this.updateSub}
+                                checked={this.state.recurring && this.state.org.active}
                             />
                     </ExpansionPanelDetails>
     
@@ -87,12 +105,10 @@ class OrgManageItem extends React.Component {
 }
 
 
-const OrgManageList = ({ classes, orgs }) => {
-    // console.log('subs...',orgs)
-
+const OrgManageList = ({ classes, orgs, updateState }) => {
     return (
         <List className={classes.list}>
-            {orgs.map((org)=> <OrgManageItem classes={classes} org={org} />)}           
+            {orgs.map((org)=> <OrgManageItem key={org.ID} classes={classes} org={org} update={updateState} />)}           
         </List>
     )
 }

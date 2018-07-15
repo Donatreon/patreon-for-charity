@@ -19,8 +19,8 @@ const styles = theme => ({
 });
 
 function CenteredGrid(props) {
-  const { classes, orgs } = props;
-  // console.log(classes, orgs)
+  const { classes, orgs, update } = props;
+
   return (
     <div className="wrapper">
       <div className={classes.root}>
@@ -30,7 +30,9 @@ function CenteredGrid(props) {
               <Paper className={classes.paper}>
                 <CharityButton
                   name={org.name}
+                  org={org}
                   image={org.logo_url}
+                  updateSubs={update}
                 />
               </Paper>
             </Grid>

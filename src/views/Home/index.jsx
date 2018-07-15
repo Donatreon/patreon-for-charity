@@ -1,9 +1,9 @@
 import React from 'react';
 import Grid from '../../components/Grid';
 
-const Home = ({ ctx: {orgs}, history, match }) => (
+const Home = ({ ctx: {orgs}, ...rest }) => (
   <div>
-    <Grid orgs={orgs} />
+    <Grid orgs={orgs} {...rest} />
   </div>
 );
 

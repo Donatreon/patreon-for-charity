@@ -34,7 +34,7 @@ const styles = {
 
 // const range = [...Array(7).keys()];
 
-const SideMenu = ({ classes, open, toggleOpen, ctx: {user, orgs} }) => {
+const SideMenu = ({ classes, open, toggleOpen, ctx: {user, orgs}, updateState }) => {
     const user_subs = user.subs.map((sub) => {
         return {
            ...orgs.find((org) => org.ID === sub.id ),
@@ -67,7 +67,7 @@ const SideMenu = ({ classes, open, toggleOpen, ctx: {user, orgs} }) => {
                 </GridItem>
 
                 <GridItem xs={12}>
-                    <OrgManageList orgs={user_subs} />
+                    <OrgManageList orgs={user_subs} updateState={updateState} />
                 </GridItem>
 
 

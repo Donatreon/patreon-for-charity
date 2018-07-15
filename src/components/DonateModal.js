@@ -30,18 +30,33 @@ class Modal extends React.Component {
       modal: false
     };
   }
-  handleClickOpen(modal) {
+
+  handleClickOpen = (modal) => {
     var x = [];
     x[modal] = true;
     this.setState(x);
   }
-  handleClose(modal) {
+
+  handleClose = (modal) => {
     var x = [];
     x[modal] = false;
     this.setState(x);
   }
+
+  handleConfirm = () => {
+    const {org, onConfirm} = this.props
+    onConfirm('user', { 
+      id: org.ID,
+      amount: 1,
+      recurring: true,
+      interval: 'm'
+    })
+    
+    this.handleClose("modal");
+  }
+
   render() {
-    const { name, classes } = this.props;
+    const { org, classes, onConfirm } = this.props;
     return (
       <div>
         <Button
@@ -73,7 +88,7 @@ class Modal extends React.Component {
               onClick={() => this.handleClose("modal")}>
               <Close className={classes.modalClose} />
             </IconButton>
-            <h4 className={classes.modalTitle}>{name}</h4>
+            <h4 className={classes.modalTitle}>{org.name}</h4>
           </DialogTitle>
           <DialogContent
             id="modal-slide-description"
@@ -90,7 +105,7 @@ class Modal extends React.Component {
               Never Mind
             </Button> */}
             <Button
-              onClick={() => this.handleClose("modal")}
+              onClick={this.handleConfirm}
               color="success"
               round
             >

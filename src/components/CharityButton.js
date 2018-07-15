@@ -18,7 +18,8 @@ const style = {
 
 class CharityButton extends React.Component {
   render() {
-    const { name, image, classes } = this.props;
+    const { name, image, classes, org, updateSubs } = this.props;
+
     return (
       <CardBody>
         <h4 className={classes.cardTitle}>{name}</h4>
@@ -30,7 +31,8 @@ class CharityButton extends React.Component {
         />
         {/* <Button color="primary">Donate now</Button> */}
         <DonateModal
-          name={name}
+          org={org}
+          onConfirm={updateSubs}
         />
       </CardBody>
     );

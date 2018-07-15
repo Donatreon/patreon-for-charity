@@ -21,9 +21,10 @@ import './App.css';
 // bootstrap the initial data state
 import demo_data from 'fake-data.json';
 
-function createSub({ amount, recurring, interval }) {
+function createSub({ id, amount, recurring, interval }) {
   return {
-    id: `2018TXHCK305${demo_data.length + 1}`, // temp crappy id maker
+    // id: `2018TXHCK305${demo_data.length + 1}`, // temp crappy id maker
+    id,
     amount,
     recurring,
     interval,
@@ -84,10 +85,26 @@ class App extends Component {
     showMenu: false,
   }
 
-  update = (new_data) => {
-    this.setState({
-      ...new_data
-    })
+  update = (key, new_data) => {
+    if (key === 'user') {
+      this.setState({
+        user: {
+          ...this.state.user,
+          subs: [...this.state.user.subs, new_data]
+        }
+      })
+    }
+    else {
+
+      const targetIndex = this.state.user.subs.findIndex((sub) => sub.id === new_data.ID)
+      // this.state.user
+      this.setState({
+        user: {
+          ...this.state.user,
+          
+        }
+      })
+    }
   }
 
   toggleDrawer = (open) => () => {
@@ -103,12 +120,12 @@ class App extends Component {
 
         {/* <Button onClick={this.toggleDrawer(true)}>Open Left</Button> */}
 
-        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} ctx={this.state} />
+        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} ctx={this.state} updateState={this.udpate} />
 
         <WrappedRoute path="/" component={Home} ctx={this.state} update={this.update} />
-        <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} />
-        <WrappedRoute path="/profile" component={Profile} ctx={this.state} />
-        <WrappedRoute path="/signin" component={SignIn} ctx={this.state} />
+        <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} update={this.update} />
+        <WrappedRoute path="/profile" component={Profile} ctx={this.state} update={this.update} />
+        <WrappedRoute path="/signin" component={SignIn} ctx={this.state} update={this.update} />
         <Footer />
       </div>
     );
