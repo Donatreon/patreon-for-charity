@@ -2,7 +2,7 @@ const modalStyle = {
   modal: {
     borderRadius: "6px",
     // adding width moves org name from two lines to one
-    width: "20%"
+    width: "25%"
   },
   modalHeader: {
     borderBottom: "none",
