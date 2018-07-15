@@ -1,51 +1,58 @@
-import React from 'react';
+import React from "react";
 // import { NavLink } from 'react-router-dom'
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 // import MenuIcon from '@material-ui/icons/Menu';
 
-import HomeIcon from './HomeIcon';
+import HomeIcon from "./HomeIcon";
+import { navTo } from "../utils";
 
 const styles = {
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   flex: {
-    flex: 1,
+    flex: 1
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20,
-  },
+    marginRight: 20
+  }
 };
 
 function NavBar(props) {
-  const { classes } = props;
-
+  const { classes, history } = props;
+  console.log(history);
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <HomeIcon href="" />
+          <IconButton
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="Menu"
+          >
+            <HomeIcon history={history} />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
             Patreon For Charity
           </Typography>
-          <Button color="inherit" href="#signin">Sign In</Button>
+          <Button color="inherit" href="#signin">
+            Sign In
+          </Button>
         </Toolbar>
       </AppBar>
-    </div >
+    </div>
   );
 }
 
 NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(NavBar);
