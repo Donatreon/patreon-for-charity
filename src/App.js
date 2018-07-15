@@ -94,7 +94,7 @@ class App extends Component {
     showMenu: false,
   }
 
-  update = (key, new_data) => {
+  updateState = (key, new_data) => {
     if (key === 'user') {
       this.setState({
         user: {
@@ -104,15 +104,16 @@ class App extends Component {
       })
     }
     else {
-
       const targetIndex = this.state.user.subs.findIndex((sub) => sub.id === new_data.ID)
       // update target record recurring and active values
-      
+      this.state.user.subs[targetIndex]['recurring'] = new_data.recurring
+      this.state.user.subs[targetIndex]['active'] = new_data.recurring
+
       // this.state.user
       this.setState({
         user: {
           ...this.state.user,
-          
+          subs: [...this.state.user.subs]
         }
       })
     }
@@ -129,12 +130,12 @@ class App extends Component {
       <div className="App">
         <NavBar toggleDrawer={this.toggleDrawer} />
 
-        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} ctx={this.state} updateState={this.udpate} />
+        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} ctx={this.state} updateState={this.updateState} />
 
-        <WrappedRoute path="/" component={Home} ctx={this.state} update={this.update} />
-        <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} update={this.update} />
-        <WrappedRoute path="/profile" component={Profile} ctx={this.state} update={this.update} />
-        <WrappedRoute path="/signin" component={SignIn} ctx={this.state} update={this.update} />
+        <WrappedRoute path="/" component={Home} ctx={this.state} update={this.updateState} />
+        <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} update={this.updateState} />
+        <WrappedRoute path="/profile" component={Profile} ctx={this.state} update={this.updateState} />
+        <WrappedRoute path="/signin" component={SignIn} ctx={this.state} update={this.updateState} />
         <Footer />
       </div>
     );

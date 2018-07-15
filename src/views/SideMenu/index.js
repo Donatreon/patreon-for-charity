@@ -34,7 +34,7 @@ const styles = {
 
 // const range = [...Array(7).keys()];
 
-const SideMenu = ({ classes, open, toggleOpen, ctx: {user, orgs}, updateState }) => {
+const SideMenu = ({ classes, open, toggleOpen, updateState, ctx: {user, orgs} }) => {
     const user_subs = user.subs.map((sub) => {
         return {
            ...orgs.find((org) => org.ID === sub.id ),

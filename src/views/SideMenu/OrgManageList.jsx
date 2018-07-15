@@ -51,7 +51,6 @@ class OrgManageItem extends React.Component {
 
     updateSub = () => {
         const {update} = this.props
-
         const next_state = ! this.state.recurring
 
         update('sub', {
@@ -90,11 +89,14 @@ class OrgManageItem extends React.Component {
                     </ExpansionPanelSummary>
         
                     <ExpansionPanelDetails>
-                            recurring 
+                        <div style={{ display: 'flex', alignItems: 'center'}}>
                             <Checkbox
                                 onChange={this.updateSub}
                                 checked={this.state.recurring && this.props.org.active}
-                            />
+                            />                        
+                            <span>recurring </span>
+                        </div>
+
                     </ExpansionPanelDetails>
     
                 </ExpansionPanel>
