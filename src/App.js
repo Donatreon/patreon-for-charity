@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+// import { createMuiTheme } from '@material-ui/core/styles';
 
 import Home from 'views/Home';
 import CreateOrg from 'views/CreateOrg';
@@ -45,8 +46,6 @@ const demo_user = {
 }
 
 
-
-
 const WrappedRoute = ({ component: Component, path, ...rest }) => {
   return (
     <Route
@@ -58,6 +57,16 @@ const WrappedRoute = ({ component: Component, path, ...rest }) => {
     />
   );
 };
+
+
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: '#ED1B2E',
+//     },
+//   }
+// });
+
 
 class App extends Component {
   state = {
