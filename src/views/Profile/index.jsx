@@ -20,7 +20,7 @@ const styles = {
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "90%" // 16:9
   }
 };
 
@@ -30,9 +30,7 @@ const Profile = props => {
     <div className="container">
       <Card className={classes.card}>
         <CardContent>
-          <Typography paragraph>
-            <CardMedia className={classes.media} image={org.logo_url} />
-          </Typography>
+          <CardMedia className={classes.media} image={org.logo_url} />
           <Typography gutterBottom variant="headline" component="h2">
             {org.name}
           </Typography>
