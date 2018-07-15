@@ -6,3 +6,18 @@
 body {
   background-color: #f9f0b8;
 }
+
+.form {
+  margin-left: 2rem;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.inputline {
+  display: flex;
+  justify-content: flex-start;
+}
