@@ -5,9 +5,15 @@ import Home from 'views/Home';
 import CreateOrg from 'views/CreateOrg';
 import Profile from 'views/Profile';
 import SignIn from 'views/SignIn';
+import SideMenu from 'views/SideMenu'
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer/Footer";
+
+import Button from '@material-ui/core/Button';
+
+// import { withStyles } from '@material-ui/core/styles';
+
 
 import 'normalize.css/normalize.css';
 import './App.css';
@@ -41,6 +47,8 @@ const demo_user = {
 }
 
 
+
+
 const WrappedRoute = ({ component: Component, path, ...rest }) => {
   return (
     <Route
@@ -56,7 +64,8 @@ const WrappedRoute = ({ component: Component, path, ...rest }) => {
 class App extends Component {
   state = {
     orgs: demo_data.orgs,
-    user: demo_user, 
+    user: demo_user,
+    showMenu: false,
   }
 
   update = (new_data) => {
@@ -65,10 +74,22 @@ class App extends Component {
     })
   }
 
+  toggleDrawer = (open) => () => {
+    console.log('hi')
+    this.setState({
+      showMenu: open,
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <NavBar />
+
+        <Button onClick={this.toggleDrawer(true)}>Open Left</Button>
+
+        <SideMenu open={this.state.showMenu} toggleOpen={this.toggleDrawer} />
+
         <WrappedRoute path="/" component={Home} ctx={this.state} update={this.update} />
         <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} />
         <WrappedRoute path="/profile" component={Profile} ctx={this.state} />
@@ -80,3 +101,5 @@ class App extends Component {
 }
 
 export default App;
+
+// export default withStyles(styles)(App);
