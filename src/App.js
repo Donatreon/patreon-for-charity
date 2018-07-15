@@ -7,6 +7,7 @@ import Profile from 'views/Profile';
 import SignIn from 'views/SignIn';
 
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer/Footer";
 
 import 'normalize.css/normalize.css';
 import './App.css';
@@ -16,7 +17,7 @@ import demo_data from 'fake-data.json';
 
 function createSub ({ amount, recurring, interval }) {
   return {
-    id: demo_data.orgs.length, // temp crappy id maker
+    id: `2018TXHCK305${demo_data.length + 1}`, // temp crappy id maker
     amount,
     recurring,
     interval,
@@ -26,9 +27,9 @@ function createSub ({ amount, recurring, interval }) {
 const demo_user = {
   name: 'Gus Goodguy',
   subs: [
-  // subs
+  // charities backed by the User
     {
-      id: 1,
+      id: '2018TXHCK301',
       recurring: true,
       amount: 1, // in whole dollars
       interval: 'm', // monthly: m, quarterly: q
@@ -72,6 +73,7 @@ class App extends Component {
         <WrappedRoute path="/create-org" component={CreateOrg} ctx={this.state} />
         <WrappedRoute path="/profile" component={Profile} ctx={this.state} />
         <WrappedRoute path="/signin" component={SignIn} ctx={this.state} />
+        <Footer />
       </div>
     );
   }
