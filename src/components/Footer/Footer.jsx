@@ -32,7 +32,7 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                Donato
+                DonateTo
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -72,7 +72,7 @@ function Footer({ ...props }) {
             className={aClasses}
             target="_blank"
           >
-            Donato
+            DonateTo
           </a>{" "}
           for the better.
         </div>
