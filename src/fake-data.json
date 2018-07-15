@@ -6,7 +6,7 @@
       "description": "Teach For America is playing a role in eliminating this injustice by recruiting, developing, and supporting leaders committed to creating change. These individuals begin their path with a two-year commitment to teach in low-income urban and rural public schools. During this time they are called corps members. Deeply affected by their experience in the classroom, after two years, they join our alumni network and continue to advocate for students from many different roles in education and other fields.  ",
       "rating": "4",
       "category": "Education",
-      "logo_url": "https://www.teachforamerica.org/sites/default/files/styles/slide_medium/public/thumbnails/image/2017/07/change-starts-with-you.png?itok=nYJJxwI5",
+      "logo_url": "https://www.teachforamerica.org/sites/default/files/styles/large/public/thumbnails/image/2018/01/170911_v01_rt_events_webinars_changemakers.jpg?itok=Ilj6NzVE",
       "url": "http://www.teachforamerica.org/"
     },
     {
@@ -37,12 +37,12 @@
       "url": "http://www.scouting.org//"
     },
     {
-      "name": "Alzheimer's and Aging Research Center",
+      "name": "Alzheimer's Research C.",
       "ID": "2018TXHCK305",
       "description": "Alzheimer's and Aging Research Center is dedicated to support research directed towards the discovery and development of innovative methods to treat and possibly cure Alzheimer's and aging-related diseases. We provide funding for biomedical research and support for scientists to educate their peers and participate in scientific collaborations.",
       "rating": "3",
       "category": "Health",
-      "logo_url": "https://imgur.com/a/lLtSkse",
+      "logo_url": "http://www.alzheimersinfo.org/AlzheimerInfo/sites/default/files/logoSmall.gif",
       "url": "http://www.aging-research.org"
     },
     {
@@ -60,7 +60,7 @@
       "description": "Greenpeace Fund promotes Greenpeace's mission: to halt environmental destruction and to promote solutions for future generations. Greenpeace Fund promotes Greenpeace's mission through public education, grassroots lobbying and grants to other environmental organizations.",
       "rating": "4",
       "category": "Environment",
-      "logo_url": "https://storage.googleapis.com/fund-uploads/1/Greenpeace-logo-final.png",
+      "logo_url": "https://static1.squarespace.com/static/561d5150e4b0245b18688798/564962a4e4b01aeb0d0ba2f2/564a25a9e4b0e506315277be/1447949335851/4+Greenpeace+Logo+Square.png?format=300w",
       "url": "https://www.greenpeacefund.org/"
     },
     {
@@ -79,6 +79,69 @@
       "rating": "4",
       "category": "Social",
       "logo_url": "https://cdn.buttercms.com/LQCLK3vTyfbw0Q8yVgLQ",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "PetSmart",
+      "ID": "2018TXHCK310",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "5",
+      "category": "Social",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/PetSmart-Charities-logo.jpg?itok=crfSWwoV",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "United Cerebral Palsy",
+      "ID": "2018TXHCK311",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "4",
+      "category": "Social",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/UCP%20logo%20with%20stacked%20tagline_transparent%20background_Charity%20Profile%20Logos%20_%20Images_United%20Cerebral%20Palsy_Logo.png?itok=i7pHByM5",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "Believe in Tomorrow",
+      "ID": "2018TXHCK312",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "4",
+      "category": "Health",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/BIT-full-logo_0.png?itok=HHCq7ZCo",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "House of Ruth",
+      "ID": "2018TXHCK313",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "4",
+      "category": "Social",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/house-of-ruth_2016_logo.png?itok=WM8rMVyj",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "Rebuilding Together",
+      "ID": "2018TXHCK15",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "4",
+      "category": "Social",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/Rebuilding%20Together%20Montgomery%20County%20logo.png?itok=ATCQJLfd",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "American Brain Foundation",
+      "ID": "2018TXHCK318",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "4",
+      "category": "Social",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/ABF-Logo%20Color.jpg?itok=eRSZY3e4",
+      "url": "https://www.womenwhocode.com/"
+    },
+    {
+      "name": "Make a Wish",
+      "ID": "2018TXHCK20",
+      "description": "We envision a world where women are proportionally represented as technical leaders, executives, founders, VCs, board members, and software engineers.",
+      "rating": "4",
+      "category": "Social",
+      "logo_url": "https://www.charities.org/sites/default/files/styles/logo/public/MAW%20Updated%20Logo_1.9.2018.PNG?itok=IldWI6xm",
       "url": "https://www.womenwhocode.com/"
     }
   ]
