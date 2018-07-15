@@ -1,4 +1,5 @@
 import React from 'react';
+// import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -23,6 +24,7 @@ const styles = {
 
 function NavBar(props) {
   const { classes } = props;
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -30,10 +32,13 @@ function NavBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             Patreon For Charity
           </Typography>
-          <Button color="inherit">Sign In</Button>
+          {/* <NavLink to="/signin"> */}
+
+          <Button color="inherit" href="signin">Sign In</Button>
+          {/* </NavLink> */}
         </Toolbar>
       </AppBar>
-    </div>
+    </div >
   );
 }
 

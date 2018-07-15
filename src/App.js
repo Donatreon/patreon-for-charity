@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 
 import Home from 'views/Home';
 import CreateOrg from 'views/CreateOrg';
-import OrgDetails from 'views/OrgDetails';
 import SignIn from 'views/SignIn';
 
 import NavBar from './components/NavBar';
