@@ -6,6 +6,10 @@ import Button from "components/CustomButtons/Button.jsx";
 import imagesStyles from "../assets/jss/material-kit-react/imagesStyles.jsx";
 
 import { cardTitle } from "../assets/jss/material-kit-react.jsx";
+import DonateModal from "./DonateModal";
+
+// custom components
+// import DonateModal from './DonateModal';
 
 const style = {
   ...imagesStyles,
@@ -24,7 +28,10 @@ class CharityButton extends React.Component {
           src={image}
           alt={name}
         />
-        <Button color="primary">Donate now</Button>
+        {/* <Button color="primary">Donate now</Button> */}
+        <DonateModal
+          name={name}
+        />
       </CardBody>
     );
   }
