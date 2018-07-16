@@ -28,14 +28,14 @@ function Footer({ ...props }) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/"
+                href="https://donate.now.sh/"
                 className={classes.block}
-                target="_blank"
+              // target="_blank"
               >
-                DonateTo
+                Donate.To
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
+            {/* <ListItem className={classes.inlineBlock}>
               <a
                 href="https://www.creative-tim.com/presentation"
                 className={classes.block}
@@ -61,7 +61,7 @@ function Footer({ ...props }) {
               >
                 Licenses
               </a>
-            </ListItem>
+            </ListItem> */}
           </List>
         </div>
         <div className={classes.right}>
@@ -72,7 +72,7 @@ function Footer({ ...props }) {
             className={aClasses}
             target="_blank"
           >
-            DonateTo
+            Donate.To
           </a>{" "}
           for the better.
         </div>
